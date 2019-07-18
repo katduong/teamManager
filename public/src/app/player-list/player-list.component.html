@@ -1,0 +1,14 @@
+<table class="table">
+    <thead>
+        <th>Team Name</th>
+        <th>Preferred Position</th>
+        <th>Actions</th>
+    </thead>
+    <tr *ngFor="let player of players">
+        <td>{{ player.name }}</td>
+        <td>{{ player.position }}</td>
+        <td>
+            <button class="btn btn-danger" (click)="deletePlayer(player)">Delete</button>
+        </td>
+    </tr>
+</table>

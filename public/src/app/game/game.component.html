@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <th>Team Name</th>
+        <th>Actions</th>
+    </thead>
+    <tr *ngFor="let player of players">
+        <td>{{ player.name }}</td>
+        <td class="row justify-content-between">
+            <button [ngClass]="{ 'btn-outline-dark':  getGameStatus(player) != 'green', 'btn-success': getGameStatus(player) === 'green'}" (click)="playing(player, 'green')">Playing</button>
+
+            <button [ngClass]="{ 'btn-outline-dark':  getGameStatus(player) != 'red', 'btn-danger': getGameStatus(player) === 'red'}" (click)="playing(player, 'red')">Not Playing</button>
+
+            <button [ngClass]="{ 'btn-outline-dark':  getGameStatus(player) != 'yellow', 'btn-warning': getGameStatus(player) === 'yellow'}" (click)="playing(player, 'yellow')">Undecided</button>
+        </td>
+    </tr>
+</table>
